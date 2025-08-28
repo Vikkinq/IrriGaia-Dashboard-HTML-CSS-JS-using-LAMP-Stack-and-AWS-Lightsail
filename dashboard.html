@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IrriGaia Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/x-icon" href="/images/IrriLogo.png" />
+  </head>
+  <body>
+    <button id="sidebar-toggle" class="sidebar-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="logo-container">
+          <img src="images/IrriLogo.png" alt="IrriGaia Logo" class="logo-image" />
+          <h1>IrriGaia</h1>
+        </div>
+        <nav class="nav-menu">
+          <div class="nav-section">
+            <h3 class="nav-section-title collapsible">Dashboard</h3>
+            <div class="nav-section-content">
+              <a href="index.html" class="nav-link active" data-page="live"> <i class="fas fa-broadcast-tower"></i>Live </a>
+              <a href="daily.html" class="nav-link" data-page="daily"> <i class="fas fa-calendar-day"></i>Daily </a>
+              <a href="weekly.html" class="nav-link" data-page="weekly"> <i class="fas fa-calendar-week"></i>Weekly </a>
+              <a href="monthly.html" class="nav-link" data-page="monthly"> <i class="fas fa-calendar"></i>Monthly </a>
+            </div>
+          </div>
+          <div class="nav-section">
+            <h3 class="nav-section-title collapsible">IrriGaia Website</h3>
+            <div class="nav-section">
+              <a href="https://vikkinq.github.io/FASCROP/" class="nav-link" target="_blank"> <i class="fas fa-globe"></i>Webpage </a>
+            </div>
+          </div>
+        </nav>
+        <!-- Chart Type Toggle -->
+        <div class="chart-toggle">
+          <button id="lineChartBtn" class="toggle-btn active">Line Chart</button>
+          <button id="barChartBtn" class="toggle-btn">Bar Chart</button>
+        </div>
+        <div class="download-buttons">
+          <button class="download-btn" onclick="downloadPDF()"><i class="fas fa-download"></i>Download PDF</button>
+          <button class="download-btn" onclick="downloadXML()"><i class="fas fa-download"></i>Download CSV</button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Metric Cards -->
+        <div class="metric-cards">
+          <div class="metric-card">
+            <div class="metric-header">
+              <h3>Leaves Counter</h3>
+              <i class="fas fa-leaf"></i>
+            </div>
+            <div class="metric-value" id="leavesCount">--</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-header">
+              <h3>Drip Moisture Level</h3>
+              <i class="fas fa-tint"></i>
+            </div>
+            <div class="metric-value" id="dripLevel">--%</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-header">
+              <h3>Current Time (PH)</h3>
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="metric-value">
+              <span id="currentTime">--:--:--</span>
+              <span id="currentDate"></span>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-header">
+              <h3>Mist Moisture Level</h3>
+              <i class="fas fa-tint"></i>
+            </div>
+            <div class="metric-value" id="moistureLevel">--%</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-header">
+              <h3>Height Counter</h3>
+              <i class="fas fa-leaf"></i>
+            </div>
+            <div class="metric-value" id="leavesCount">--</div>
+          </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="charts-container">
+          <div class="chart-card">
+            <h3>Water Consumption</h3>
+            <canvas id="waterChart"></canvas>
+          </div>
+          <div class="chart-card">
+            <h3>Energy Consumption</h3>
+            <canvas id="energyChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Tables -->
+        <div class="tables-container">
+          <div class="table-card">
+            <h3>Water Consumption Data</h3>
+            <div class="table-wrapper">
+              <table id="waterTable">
+                <thead>
+                  <tr>
+                    <th>Minutes</th>
+                    <th>Mist (L)</th>
+                    <th>Drip (L)</th>
+                  </tr>
+                </thead>
+                <tbody id="waterTableBody" class="table-scrollable">
+                  <!-- Table rows will be populated here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="table-card">
+            <h3>Energy Consumption Data</h3>
+            <div class="table-wrapper">
+              <table id="energyTable">
+                <thead>
+                  <tr>
+                    <th>Minutes</th>
+                    <th>Mist (kWh)</th>
+                    <th>Drip (kwH)</th>
+                  </tr>
+                </thead>
+                <tbody id="energyTableBody" class="table-scrollable">
+                  <!-- Table rows will be populated here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.2.2/jszip.min.js"></script>
+    <script src="script.js"></script>
+    <script src="hourly.js"></script>
+    <script src="charts.js"></script>
+  </body>
+</html>

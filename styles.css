@@ -1,0 +1,413 @@
+:root {
+  --primary-color: #059669;
+  --secondary-color: #10b981;
+  --background-color: #f0fdf4;
+  --sidebar-color: #065f46;
+  --card-background: #ffffff;
+  --text-color: #1f2937;
+  --border-color: #e5e7eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+}
+
+.logo-container h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-menu {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nav-section-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  color: #a7f3d0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border-radius: 0.25rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link i {
+  margin-right: 0.5rem;
+  width: 20px;
+  text-align: center;
+}
+
+.download-buttons {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  background-color: #059669;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #047857;
+}
+
+.download-btn i {
+  margin-right: 0.5rem;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1;
+  padding: 1.5rem;
+  margin-left: 250px; /* Match exactly with sidebar width */
+  transition: margin-left 0.3s ease-in-out;
+  width: calc(100% - 250px); /* Ensure proper width calculation */
+}
+
+/* Chart Toggle Styles */
+.chart-toggle {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: #059669;
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+.toggle-btn.active {
+  background-color: rgba(1, 160, 67, 0.1);
+  color: white;
+}
+
+.toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Metric Cards Styles */
+.metric-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.metric-card {
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Time Clocks */
+#currentTime {
+  font-size: 1.5rem;
+}
+
+#currentDate {
+  font-size: 1rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* Charts Styles */
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.chart-card {
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.chart-card h3 {
+  margin-bottom: 1.75rem;
+}
+
+/* Tables Styles */
+.tables-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.table-card h3 {
+  margin-bottom: 1.75rem;
+}
+
+.table-card {
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.table-wrapper {
+  max-height: 300px; /* Adjust this value as needed */
+  overflow-y: auto;
+}
+
+.table-scrollable {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
+  z-index: 1;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+th {
+  font-weight: 700;
+}
+
+.navigation-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.navigation-controls button {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navigation-controls button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (min-width: 1201px) {
+  .sidebar-toggle {
+    display: none !important; /* Force hide on desktop */
+  }
+
+  .sidebar {
+    transform: none; /* Always show sidebar on desktop */
+  }
+
+  .main-content {
+    margin-left: 250px; /* Maintain consistent spacing */
+  }
+}
+
+@media (max-width: 1200px) {
+  body {
+    padding-left: 0;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    width: 250px; /* Fixed width for tablet */
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .charts-container,
+  .tables-container {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-card,
+  .table-card {
+    overflow-x: auto;
+  }
+
+  canvas {
+    max-width: 100%;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .sidebar {
+    width: 100%; /* Full width on mobile */
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+    width: 100%; /* Ensure full width when active */
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+
+.low-moisture { 
+  color: rgb(161, 56, 29); 
+}
+  .normal-moisture { 
+    color: rgb(13, 128, 13); 
+  }

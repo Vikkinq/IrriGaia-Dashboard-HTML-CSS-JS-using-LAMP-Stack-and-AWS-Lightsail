@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IrriGaia | Access Portal</title>
+    <link rel="stylesheet" href="passcode.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="/images/IrriLogo.png" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Left side with illustrations -->
+      <div class="left-section">
+        <div class="illustration-container">
+          <div class="illustration-item">
+            <img src="images/WebLogo.jpg" alt="Smart Irrigation System" class="illustration" />
+            <div class="floating-elements">
+              <div class="floating-icon icon-1"><i class="fas fa-leaf"></i></div>
+              <div class="floating-icon icon-2"><i class="fas fa-tint"></i></div>
+              <div class="floating-icon icon-3"><i class="fas fa-sun"></i></div>
+              <div class="floating-icon icon-4"><i class="fas fa-seedling"></i></div>
+            </div>
+          </div>
+          <h2 class="illustration-title">Smart Irrigation Management</h2>
+          <p class="illustration-subtitle">Monitoring and optimizing crop irrigation in real-time</p>
+        </div>
+        <div class="dots-pattern"></div>
+      </div>
+
+      <!-- Right side with login form -->
+      <div class="right-section">
+        <div class="login-container">
+          <!-- Logo -->
+          <div class="logo-container">
+            <img src="images/IrriLogo.png" alt="IrriGaia Logo" class="logo" />
+          </div>
+
+          <h1 class="login-title">Access Dashboard</h1>
+          <p class="login-subtitle">Enter your passcode to continue</p>
+
+          <div class="login-form">
+            <div class="passcode-container">
+              <label for="passcode">Passcode</label>
+              <div class="input-group">
+                <input type="password" id="passcode" placeholder="Enter passcode" maxlength="4" />
+                <button type="button" id="toggle-password">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+              <div class="error-message" id="error-message"></div>
+            </div>
+
+            <button type="button" id="login-button" class="login-button">
+              <span class="button-text">Access Dashboard</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="login-footer">
+            <p>© 2025 IrriGaia. All rights reserved.</p>
+            <p>Secure access portal for authorized personnel only</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="passcode.js"></script>
+  </body>
+</html>
